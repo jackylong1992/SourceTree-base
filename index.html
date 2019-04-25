@@ -13,7 +13,13 @@
     <!--start html here -->
     <div class="container">
         <h1>Quản lý dinh dưỡng</h1>
-
+        <p>data from: <a href="https://www.nutritionix.com/food/yogurt">https://www.nutritionix.com/food/yogurt</a></p>
+        <div class="legend">
+            <h3>Thực đơn <b>2000</b> calo bao gồm:</h3>
+            <p><b>1200</b> calo cabs</p>
+            <p><b>400</b> calo protein</p>
+            <p><b>400</b> calo fat</p>
+        </div>
         <div class="food-search">
             <div class="form-group">
                 <label for="search">Tìm kiếm thức ăn</label>
@@ -24,8 +30,15 @@
         <div class="food-today">
             <div class="table food"></div>
         </div>
-        <button type="button" class="btn btn-primary show-list">Show food list</button>
-        <div class="table list"></div>
+        <div class="form-group">
+            <label for="ouputName">Tên file khi lưu</label>
+            <input type="text" class="form-control" id="ouputName">
+        </div>
+        <button type="button" class="btn btn-primary save">Save</button>
+        <!-- <button type="button" class="btn btn-primary show-list">Show food list</button>
+        <div class="table list"></div> -->
+        <input type="file" id="files" name="files[]" multiple />
+        <output id="list"></output>
     </div>
     
     <!--end html here -->

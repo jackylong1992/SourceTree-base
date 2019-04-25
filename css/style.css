@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+.container {
+    position: relative;
+}
+
 table {
     width:100%; 
     margin-top: 30px;
@@ -25,7 +29,7 @@ table th {
     color: white;
 }
 td:last-of-type {
-    width: 20%;
+    width: 10%;
 }
 
 tr:hover td {
@@ -41,4 +45,16 @@ table input {
     width: 100%;
     background: transparent;
     border: none;
+}
+
+.legend {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    border: solid 1px;
+    padding: 10px;
+}
+
+.food-search {
+    margin-top: 100px;
 }

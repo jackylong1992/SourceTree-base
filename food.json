@@ -61,5 +61,23 @@
         "protein": 300,
         "unit": "1 bat",
         "note": "chỉ nên ăn tái chín hoặc tái, tái nạm hoặc gầu rất béo"
+    },
+    {
+        "name": "sữa chua",
+        "calo": 100,
+        "cabs": 45,
+        "fat": 33,
+        "protein": 22,
+        "unit": "1 cup",
+        "note": ""
+    },
+    {
+        "name": "bột yến mạch",
+        "calo": 402,
+        "cabs": 280,
+        "fat": 88,
+        "protein": 36,
+        "unit": "100g",
+        "note": ""
     }
 ]

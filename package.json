@@ -1,0 +1,22 @@
+{
+  "name": "sourcetree-base",
+  "version": "1.0.0",
+  "description": "Base source tree for HTML, CSS, jQuery, Bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackylong1992/SourceTree-base.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackylong1992/SourceTree-base/issues"
+  },
+  "homepage": "https://github.com/jackylong1992/SourceTree-base#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

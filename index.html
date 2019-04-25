@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--this document include Bootstrap, Jquery, AngularJS -->
-<head>
-<meta charset="utf-8">
-<title>Quản lý dinh dưỡng</title>
-<meta name="description" content="Quản lý dinh dưỡng">
-<link rel="stylesheet" href="css/style.css">
-<h1>Quản lý dinh dưỡng</h1>
+    <!--this document include Bootstrap, Jquery, AngularJS -->
+    <head>
+    <meta charset="utf-8">
+    <title>Quản lý dinh dưỡng</title>
+    <meta name="description" content="Quản lý dinh dưỡng">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 <body>
-<!--start html here -->
+    <!--start html here -->
+    <div class="container">
+        <h1>Quản lý dinh dưỡng</h1>
 
-<!--end html here -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!--start more library here -->
-
-<!--end more library here -->
-<script src="script/main.js"></script>
+        <div class="food-search">
+            <div class="form-group">
+                <label for="search">Tim kiem thuc an</label>
+                <input type="text" class="form-control" id="search">
+            </div>
+            <div class="table search"></div>    
+        </div>
+        <button type="button" class="btn btn-primary show-list">Show food list</button>
+        <div class="table list"></div>
+    </div>
+    
+    <!--end html here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--start more library here -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!--end more library here -->
+    <script src="script/main.js"></script>
 </body>
 </html>

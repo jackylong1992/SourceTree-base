@@ -43,5 +43,23 @@
         "protein": 98,
         "unit": "100g",
         "note": "4 mieng ga uc to bang 2 dot ngon tay"
+    },
+    {
+        "name": "thit bò",
+        "calo": 288,
+        "cabs": 0,
+        "fat": 176,
+        "protein": 112,
+        "unit": "100g",
+        "note": ""
+    },
+    {
+        "name": "phở",
+        "calo": 800,
+        "cabs": 200,
+        "fat": 300,
+        "protein": 300,
+        "unit": "1 bat",
+        "note": "chỉ nên ăn tái chín hoặc tái, tái nạm hoặc gầu rất béo"
     }
 ]

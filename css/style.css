@@ -27,3 +27,12 @@ table th {
 td:last-of-type {
     width: 20%;
 }
+
+tr:hover td {
+    background: #ccc;
+    cursor: pointer;
+}
+
+#summary {
+    color: red;
+}

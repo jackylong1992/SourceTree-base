@@ -1,12 +1,7 @@
 var g_foodEnergy = [];
 var g_searchResult = [];
 var g_todayFood = [];
-var g_summary = {
-    calo: 0,
-    cabs: 0,
-    fat: 0,
-    protein: 0
-}
+
 $.get("food.json", (data)=> {
     g_foodEnergy = data;
     showTable($(".table.list"), data);
@@ -52,6 +47,13 @@ function showTable (jQueryTableElement, data) {
 }
 
 function showTodayTable (jQueryTableElement, data) {
+    jQueryTableElement.html("");
+    var calo_summary = {
+        calo: 0,
+        cabs: 0,
+        fat: 0,
+        protein: 0
+    }
     var bodyText = `<table><thead><tr>
                     <th>Tên thức ăn</th>
                     <th>Calo</th>
@@ -63,19 +65,30 @@ function showTodayTable (jQueryTableElement, data) {
                     </tr></thead><tbody>`;
     data.forEach((foodItem, index)=>{
         bodyText += `<tr id="${index}">${generateTodayName(foodItem)}</tr>`;
-        g_summary.calo += parseInt(foodItem.calo) ;
-        g_summary.cabs += parseInt(foodItem.cabs);
-        g_summary.fat += parseInt(foodItem.fat) ;
-        g_summary.protein += parseInt(foodItem.protein) ;
+        calo_summary.calo += parseInt(foodItem.calo)*parseFloat(foodItem.amount) ;
+        calo_summary.cabs += parseInt(foodItem.cabs)*parseFloat(foodItem.amount);
+        calo_summary.fat += parseInt(foodItem.fat)*parseFloat(foodItem.amount) ;
+        calo_summary.protein += parseInt(foodItem.protein)*parseFloat(foodItem.amount) ;
     });
-    bodyText += generateSummary(g_summary);
+    bodyText += generateSummary(calo_summary);
     bodyText += "</tbody></table>";
     jQueryTableElement.html(bodyText);
-    jQueryTableElement.find("tr").off("click");
-    jQueryTableElement.find("tr").on("click", chooseFood);
-
+    jQueryTableElement.find("input").off("change");
+    jQueryTableElement.find("input").on("change", changeFoodAmount);
 }
 
+function changeFoodAmount() {
+    // console.log($(this).val());
+    var newValue = $(this).val();
+    var elementId = $(this).closest("tr")[0].id;
+    // console.log($(this).closest("tr")[0].id);
+    updateTodayFood(elementId, newValue);
+}
+
+function updateTodayFood(itemId, newVal) {
+    g_todayFood[itemId].amount = newVal;
+    showTodayTable($(".table.food"), g_todayFood)
+}
 
 function chooseFood (event) {
     console.log("choose food", event);
@@ -112,7 +125,7 @@ function generateTodayName (item) {
             <td>  ${item.fat} </td>
             <td>  ${item.protein} </td>
             <td>  ${item.unit} </td>
-            <td>  ${item.amount} </td>`;
+            <td><input type="text" value="${item.amount}">   </td>`;
 }
 
 function generateSummary (item) {

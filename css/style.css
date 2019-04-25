@@ -36,3 +36,9 @@ tr:hover td {
 #summary {
     color: red;
 }
+
+table input {
+    width: 100%;
+    background: transparent;
+    border: none;
+}

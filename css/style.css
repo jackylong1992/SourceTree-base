@@ -58,3 +58,18 @@ table input {
 .food-search {
     margin-top: 100px;
 }
+
+label[for=files] {
+    display: inline-block;
+    color: #fff;
+    background-color: #000000bb;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: normal;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+label[for=files]:hover {
+    background: #000;
+}

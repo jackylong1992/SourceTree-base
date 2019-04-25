@@ -37,8 +37,12 @@
         <button type="button" class="btn btn-primary save">Save</button>
         <!-- <button type="button" class="btn btn-primary show-list">Show food list</button>
         <div class="table list"></div> -->
-        <input type="file" id="files" name="files[]" multiple />
-        <output id="list"></output>
+        <div class="form-group">
+            <label for="files">Chọn file dinh dưỡng</label>
+            <input style="display: none" type="file" id="files" name="files[]" multiple />
+            <output id="list"></output>
+        </div>
+        
     </div>
     
     <!--end html here -->
@@ -47,5 +51,6 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <!--end more library here -->
     <script src="script/main.js"></script>
+    <script src="script/fileReader.js"></script>
 </body>
 </html>

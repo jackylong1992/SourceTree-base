@@ -24,3 +24,6 @@ table th {
     background-color: black;
     color: white;
 }
+td:last-of-type {
+    width: 20%;
+}

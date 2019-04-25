@@ -1,10 +1,47 @@
 [
     {
+        "name": "trứng luộc",
+        "calo": 77,
+        "cabs": 0,
+        "fat": 55,
+        "protein": 22,
+        "unit": "1 quả",
+        "note": "50gram 1 qua"
+    },
+    {
         "name": "trứng tráng",
-        "calo": 100,
-        "cabs": 60,
-        "fat": 20,
-        "protein": 20,
-        "unit": "1 quả"
+        "calo": 90,
+        "cabs": 0,
+        "fat": 60,
+        "protein": 30,
+        "unit": "1 quả",
+        "note": "nhiều dầu mỡ hơn trứng luộc"
+    },
+    {
+        "name": "cơm trắng",
+        "calo": 190,
+        "cabs": 170,
+        "fat": 5,
+        "protein": 15,
+        "unit": "1 bát",
+        "note": " 70-80gram"
+    },
+    {
+        "name": "cơm gạo lứt",
+        "calo": 206,
+        "cabs": 190,
+        "fat": 7.5,
+        "protein": 8.5,
+        "unit": "1 bát",
+        "note": "70-80gram"
+    },
+    {
+        "name": "thit ga uc khong da",
+        "calo": 110,
+        "cabs": 0,
+        "fat": 12,
+        "protein": 98,
+        "unit": "100g",
+        "note": "4 mieng ga uc to bang 2 dot ngon tay"
     }
 ]

@@ -1,5 +1,5 @@
 var g_foodEnergy = [];
-$.get("./food.json", (data)=> {
+$.get("food.json", (data)=> {
     g_foodEnergy = data;
     showTable($(".table.list"), data);
     $(".table.list").hide();
@@ -24,7 +24,15 @@ $("#search").on("input", function() {
 
 
 function showTable (jQueryTableElement, data) {
-    var bodyText = "<table><thead><tr><th>Tên thức ăn</th><th>Calo</th><th>Unit</th></tr></thead><tbody>";
+    var bodyText = `<table><thead><tr>
+                    <th>Tên thức ăn</th>
+                    <th>Calo</th>
+                    <th>Cabs</th>
+                    <th>Fat</th>
+                    <th>Protein</th>
+                    <th>Unit</th>
+                    <th>Note</th>
+                    </tr></thead><tbody>`;
     data.forEach((foodItem)=>{
         bodyText += "<tr>" + generateName(foodItem) + "</tr>"
     });
@@ -33,5 +41,11 @@ function showTable (jQueryTableElement, data) {
 }
 
 function generateName (item) {
-    return "<td>" + item.name + "</td>" + "<td>" + item.calo + "</td>" + "<td>" + item.unit + "</td>";
+    return `<td>  ${item.name}  </td>
+            <td>  ${item.calo} </td>
+            <td>  ${item.cabs} </td>
+            <td>  ${item.fat} </td>
+            <td>  ${item.protein} </td>
+            <td>  ${item.unit} </td>
+            <td>  ${item.note} </td>`;
 }

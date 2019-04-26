@@ -108,16 +108,18 @@ function updateTodayFood(itemId, newVal) {
 }
 
 function chooseFood (event) {
-    console.log("choose food", event);
-    console.log($(this));
+    // console.log("choose food", event);
+    // console.log($(this));
     var itemElem = $(this);
     var newItem = {
         name: itemElem[0].children[0].innerText,
         calo: itemElem[0].children[1].innerText,
         cabs: itemElem[0].children[2].innerText,
         fat: itemElem[0].children[3].innerText,
-        protein: itemElem[0].children[4].innerText,
-        unit: itemElem[0].children[5].innerText,
+        goodfat: itemElem[0].children[4].innerText,
+        badfat: itemElem[0].children[5].innerText,
+        protein: itemElem[0].children[6].innerText,
+        unit: itemElem[0].children[7].innerText,
         amount: 1
     }
     // console.log(newItem);
@@ -154,6 +156,8 @@ function generateSummary (item) {
             <td id="summary"><b>  ${item.calo} </b></td>
             <td><b>  ${item.cabs} </b></td>
             <td><b>  ${item.fat} </b></td>
+            <td><b>  ${item.goodfat} </b>   </td>
+            <td><b>  ${item.badfat} </b>   </td>
             <td><b>  ${item.protein} </b></td>
             <td>   </td>
             <td>   </td>`;
@@ -163,7 +167,9 @@ function generateIdeal (item) {
     return `<td><b>Cân bằng Lý tưởng</b>    </td>
             <td>${item.calo}</td>
             <td>${Math.floor(item.calo*0.5)} - ${Math.floor(item.calo*0.6)}</td>
-            <td>${Math.floor(item.calo*0.10)} - ${Math.floor(item.calo*0.15)}</td>
+            <td>${Math.floor(item.calo*0.20)} - ${Math.floor(item.calo*0.25)}</td>
+            <td>   </td>
+            <td>   </td>
             <td>${Math.floor(item.calo*0.25)} - ${Math.floor(item.calo*0.35)}</td>
             <td>   </td>
             <td>   </td>`;
@@ -173,18 +179,23 @@ function generateEvaluation (item) {
     return `<td><b></b>    </td>
             <td><b></b></td>
             <td>${Math.floor(- item.calo*0.55 + item.cabs)}</td>
-            <td>${Math.floor(- item.calo*0.125 + item.fat)}</td>
+            <td>${Math.floor(- item.calo*0.225 + item.fat)}</td>
+            <td>   </td>
+            <td>   </td>
             <td>${Math.floor(- item.calo*0.3 + item.protein)}</td>
             <td>   </td>
             <td>|value| < 50</td>`;
 }
 
 function generateTarget () {
+    // lượng chất béo bão hòa nhỏ hơn 7%
     var target = 1500;
     return `<td><b>Target</b>    </td>
             <td><b>${target}</b></td>
-            <td><b>${Math.floor(target*0.55)}</b></td>
-            <td><b>${Math.floor(target*0.125)}</b></td>
+            <td><b>${Math.floor(target*0.5)}</b></td>
+            <td><b>${Math.floor(target*0.2)}</b></td>
+            <td>   </td>
+            <td> <b>${Math.floor(target*0.07)}  </td>
             <td><b>${Math.floor(target*0.3)}</b></td>
             <td>   </td>
             <td></td>`;
@@ -209,6 +220,20 @@ $(".save").on("click", function() {
 
 function initializeTodayFood(jsonValue) {
     g_todayFood = JSON.parse(jsonValue);
+    g_todayFood = g_todayFood.map(function(foodItem){
+        return {
+            name: foodItem.name,
+            calo: foodItem.calo,
+            cabs: foodItem.cabs,
+            fat: foodItem.fat,
+            goodfat: foodItem.goodfat ? foodItem.goodfat : 0,
+            badfat: foodItem.badfat ? foodItem.badfat : 0,
+            protein: foodItem.protein,
+            unit: foodItem.unit,
+            note: foodItem.note,
+            amount: foodItem.amount
+        }
+    })
     showTodayTable($(".table.food"), g_todayFood);
 }
 

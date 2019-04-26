@@ -4,8 +4,8 @@
         "calo": 77,
         "cabs": 0,
         "fat": 55,
-        "goodfat": 0,
-        "badfat": 0,
+        "goodfat": 25,
+        "badfat": 14,
         "protein": 22,
         "unit": "1 quả",
         "note": "50gram 1 qua"
@@ -49,7 +49,7 @@
         "cabs": 0,
         "fat": 12,
         "goodfat": 0,
-        "badfat": 0,
+        "badfat": 5,
         "protein": 98,
         "unit": "100g",
         "note": "4 miếng gà ức to bằng 2 đốt ngón tay"
@@ -60,7 +60,7 @@
         "cabs": 0,
         "fat": 176,
         "goodfat": 0,
-        "badfat": 0,
+        "badfat": 69,
         "protein": 112,
         "unit": "100g",
         "note": ""
@@ -163,5 +163,38 @@
         "protein": 28,
         "unit": "1 goi",
         "note": "1 goi khoang 78 gram, rất nhiều béo"
+    },
+    {
+        "name": "đậu phụ",
+        "calo": 76,
+        "cabs": 8,
+        "fat": 32, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 26,
+        "unit": "100g ",
+        "note": "(không rõ mấy bìa) cân bằng chrolesterol tốt cho sức khỏe tim"
+    },
+    {
+        "name": "đùi gà có da",
+        "calo": 187,
+        "cabs": 0,
+        "fat": 109, 
+        "goodfat": 0,
+        "badfat": 22,
+        "protein": 77,
+        "unit": "100g ",
+        "note": "không tốt bằng ức, béo hơn"
+    },
+    {
+        "name": "khoai lang",
+        "calo": 86,
+        "cabs": 81,
+        "fat": 1, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 4,
+        "unit": "100g ",
+        "note": "(không rõ 1 củ bao nhiêu), nhiều xơ, rất tốt"
     }
 ]

@@ -4,6 +4,8 @@
         "calo": 77,
         "cabs": 0,
         "fat": 55,
+        "goodfat": 0,
+        "badfat": 0,
         "protein": 22,
         "unit": "1 quả",
         "note": "50gram 1 qua"
@@ -13,6 +15,8 @@
         "calo": 90,
         "cabs": 0,
         "fat": 60,
+        "goodfat": 0,
+        "badfat": 0,
         "protein": 30,
         "unit": "1 quả",
         "note": "nhiều dầu mỡ hơn trứng luộc"
@@ -22,6 +26,8 @@
         "calo": 190,
         "cabs": 170,
         "fat": 5,
+        "goodfat": 0,
+        "badfat": 0,
         "protein": 15,
         "unit": "1 bát",
         "note": " 70-80gram"
@@ -31,33 +37,74 @@
         "calo": 206,
         "cabs": 190,
         "fat": 7.5,
+        "goodfat": 0,
+        "badfat": 0,
         "protein": 8.5,
         "unit": "1 bát",
         "note": "70-80gram"
     },
     {
-        "name": "thit ga uc khong da",
+        "name": "gà ức không da",
         "calo": 110,
         "cabs": 0,
         "fat": 12,
+        "goodfat": 0,
+        "badfat": 0,
         "protein": 98,
         "unit": "100g",
-        "note": "4 mieng ga uc to bang 2 dot ngon tay"
+        "note": "4 miếng gà ức to bằng 2 đốt ngón tay"
     },
     {
-        "name": "thit bò",
+        "name": "thịt bò",
         "calo": 288,
         "cabs": 0,
         "fat": 176,
+        "goodfat": 0,
+        "badfat": 0,
         "protein": 112,
         "unit": "100g",
         "note": ""
+    },
+    {
+        "name": "thịt lợn (nạc thăn)",
+        "calo": 109,
+        "cabs": 0,
+        "fat": 20,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 89,
+        "unit": "100g",
+        "note": ""
+    },
+    {
+        "name": "cá trắm",
+        "calo": 91,
+        "cabs": 0,
+        "fat": 23,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 68,
+        "unit": "100g",
+        "note": ""
+    },
+    {
+        "name": "cá hồi",
+        "calo": 216,
+        "cabs": 0,
+        "fat": 142,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 74,
+        "unit": "100g",
+        "note": "chất béo tốt và giàu khoáng chất"
     },
     {
         "name": "phở",
         "calo": 800,
         "cabs": 200,
         "fat": 300,
+        "goodfat": 0,
+        "badfat": 0,
         "protein": 300,
         "unit": "1 bat",
         "note": "chỉ nên ăn tái chín hoặc tái, tái nạm hoặc gầu rất béo"
@@ -66,8 +113,10 @@
         "name": "sữa chua",
         "calo": 100,
         "cabs": 45,
-        "fat": 33,
-        "protein": 22,
+        "fat": 22,
+        "goodfat": 7,
+        "badfat": 15,
+        "protein": 33,
         "unit": "1 cup",
         "note": ""
     },
@@ -76,8 +125,43 @@
         "calo": 402,
         "cabs": 280,
         "fat": 88,
+        "goodfat": 0,
+        "badfat": 0,
         "protein": 36,
         "unit": "100g",
         "note": ""
+    },
+    {
+        "name": "trái chuối",
+        "calo": 89,
+        "cabs": 82,
+        "fat": 3,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 4,
+        "unit": "100g",
+        "note": "1 quả cỡ vừa"
+    },
+    {
+        "name": "chân giò muối",
+        "calo": 483,
+        "cabs": 0,
+        "fat": 338,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 145,
+        "unit": "100g",
+        "note": "rất béo và không tốt "
+    },
+    {
+        "name": "mỳ tôm",
+        "calo": 355,
+        "cabs": 210,
+        "fat": 117, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 28,
+        "unit": "1 goi",
+        "note": "1 goi khoang 78 gram, rất nhiều béo"
     }
 ]

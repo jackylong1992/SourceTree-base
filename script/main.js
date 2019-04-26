@@ -32,6 +32,8 @@ function showTable (jQueryTableElement, data) {
                     <th>Calo</th>
                     <th>Cabs</th>
                     <th>Fat</th>
+                    <th>Good Fat</th>
+                    <th>Bad Fat</th>
                     <th>Protein</th>
                     <th>Unit</th>
                     <th>Note</th>
@@ -52,6 +54,8 @@ function showTodayTable (jQueryTableElement, data) {
         calo: 0,
         cabs: 0,
         fat: 0,
+        badfat: 0,
+        goodfat: 0,
         protein: 0
     }
     var bodyText = `<table><thead><tr>
@@ -59,18 +63,31 @@ function showTodayTable (jQueryTableElement, data) {
                     <th>Calo</th>
                     <th>Cabs</th>
                     <th>Fat</th>
+                    <th>Good Fat</th>
+                    <th>Bad Fat</th>
                     <th>Protein</th>
                     <th>Unit</th>
                     <th>So luong</th>
                     </tr></thead><tbody>`;
     data.forEach((foodItem, index)=>{
         bodyText += `<tr id="${index}">${generateTodayName(foodItem)}</tr>`;
-        calo_summary.calo += parseInt(foodItem.calo)*parseFloat(foodItem.amount) ;
-        calo_summary.cabs += parseInt(foodItem.cabs)*parseFloat(foodItem.amount);
-        calo_summary.fat += parseInt(foodItem.fat)*parseFloat(foodItem.amount) ;
-        calo_summary.protein += parseInt(foodItem.protein)*parseFloat(foodItem.amount) ;
+        calo_summary.calo += Math.floor(parseInt(foodItem.calo)*parseFloat(foodItem.amount));
+        calo_summary.cabs += Math.floor(parseInt(foodItem.cabs)*parseFloat(foodItem.amount));
+        calo_summary.fat += Math.floor(parseInt(foodItem.fat)*parseFloat(foodItem.amount));
+        if (foodItem.goodfat) {
+            calo_summary.goodfat += Math.floor(parseInt(foodItem.goodfat)*parseFloat(foodItem.amount));
+        }
+        if (foodItem.badfat) {
+            calo_summary.badfat += Math.floor(parseInt(foodItem.badfat)*parseFloat(foodItem.amount));
+        }
+        
+        calo_summary.protein += Math.floor(parseInt(foodItem.protein)*parseFloat(foodItem.amount));
     });
-    bodyText += generateSummary(calo_summary);
+    bodyText += `<tr class="bold"> ${generateSummary(calo_summary)} </tr>` ;
+    bodyText += `<tr class="target"> ${generateTarget(calo_summary)} </tr>` ;
+    bodyText += `<tr class="bold"> ${generateIdeal(calo_summary)} </tr>` ;
+    bodyText += `<tr> ${generateEvaluation(calo_summary)} </tr>` ;
+    
     bodyText += "</tbody></table>";
     jQueryTableElement.html(bodyText);
     jQueryTableElement.find("input").off("change");
@@ -113,6 +130,8 @@ function generateName (item) {
             <td>  ${item.calo} </td>
             <td>  ${item.cabs} </td>
             <td>  ${item.fat} </td>
+            <td>  ${item.goodfat} </td>
+            <td>  ${item.badfat} </td>
             <td>  ${item.protein} </td>
             <td>  ${item.unit} </td>
             <td>  ${item.note} </td>`;
@@ -123,6 +142,8 @@ function generateTodayName (item) {
             <td>  ${item.calo} </td>
             <td>  ${item.cabs} </td>
             <td>  ${item.fat} </td>
+            <td>  ${item.goodfat} </td>
+            <td>  ${item.badfat} </td>
             <td>  ${item.protein} </td>
             <td>  ${item.unit} </td>
             <td><input type="text" value="${item.amount}">   </td>`;
@@ -136,6 +157,37 @@ function generateSummary (item) {
             <td><b>  ${item.protein} </b></td>
             <td>   </td>
             <td>   </td>`;
+}
+
+function generateIdeal (item) {
+    return `<td><b>Cân bằng Lý tưởng</b>    </td>
+            <td>${item.calo}</td>
+            <td>${Math.floor(item.calo*0.5)} - ${Math.floor(item.calo*0.6)}</td>
+            <td>${Math.floor(item.calo*0.10)} - ${Math.floor(item.calo*0.15)}</td>
+            <td>${Math.floor(item.calo*0.25)} - ${Math.floor(item.calo*0.35)}</td>
+            <td>   </td>
+            <td>   </td>`;
+}
+
+function generateEvaluation (item) {
+    return `<td><b></b>    </td>
+            <td><b></b></td>
+            <td>${Math.floor(- item.calo*0.55 + item.cabs)}</td>
+            <td>${Math.floor(- item.calo*0.125 + item.fat)}</td>
+            <td>${Math.floor(- item.calo*0.3 + item.protein)}</td>
+            <td>   </td>
+            <td>|value| < 50</td>`;
+}
+
+function generateTarget () {
+    var target = 1500;
+    return `<td><b>Target</b>    </td>
+            <td><b>${target}</b></td>
+            <td><b>${Math.floor(target*0.55)}</b></td>
+            <td><b>${Math.floor(target*0.125)}</b></td>
+            <td><b>${Math.floor(target*0.3)}</b></td>
+            <td>   </td>
+            <td></td>`;
 }
 
 function exportToJsonFile(jsonData) {

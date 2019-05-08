@@ -196,5 +196,38 @@
         "protein": 4,
         "unit": "100g ",
         "note": "(không rõ 1 củ bao nhiêu), nhiều xơ, rất tốt"
+    },
+    {
+        "name": "bánh gạo",
+        "calo": 40,
+        "cabs": 30,
+        "fat": 10, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 0,
+        "unit": "1 cái ",
+        "note": "tính tương đối "
+    },
+    {
+        "name": "ngô",
+        "calo": 96,
+        "cabs": 70,
+        "fat": 12, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 14,
+        "unit": "100g ",
+        "note": "tốt cho tim, giảm chrolesterol"
+    },
+    {
+        "name": "đi bộ",
+        "calo": -300,
+        "cabs": 0,
+        "fat": 0, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 0,
+        "unit": "1h ",
+        "note": "tùy theo cân nặng và tốc độ đi, thông số chỉ mang tính tương đối"
     }
 ]

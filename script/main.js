@@ -2,11 +2,269 @@ var g_foodEnergy = [];
 var g_searchResult = [];
 var g_todayFood = [];
 
-$.get("food.json", (data)=> {
-    g_foodEnergy = data;
-    showTable($(".table.list"), data);
-    $(".table.list").hide();
-})
+// $.get("food.json", (data)=> {
+//     g_foodEnergy = data;
+//     showTable($(".table.list"), data);
+//     $(".table.list").hide();
+// })
+
+g_foodEnergy = [
+    {
+        "name": "trứng luộc",
+        "calo": 77,
+        "cabs": 0,
+        "fat": 55,
+        "goodfat": 25,
+        "badfat": 14,
+        "protein": 22,
+        "unit": "1 quả",
+        "note": "50gram 1 qua"
+    },
+    {
+        "name": "trứng tráng",
+        "calo": 90,
+        "cabs": 0,
+        "fat": 60,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 30,
+        "unit": "1 quả",
+        "note": "nhiều dầu mỡ hơn trứng luộc"
+    },
+    {
+        "name": "cơm trắng",
+        "calo": 190,
+        "cabs": 170,
+        "fat": 5,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 15,
+        "unit": "1 bát",
+        "note": " 70-80gram"
+    },
+    {
+        "name": "cơm gạo lứt",
+        "calo": 206,
+        "cabs": 190,
+        "fat": 7.5,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 8.5,
+        "unit": "1 bát",
+        "note": "70-80gram"
+    },
+    {
+        "name": "gà ức không da",
+        "calo": 110,
+        "cabs": 0,
+        "fat": 12,
+        "goodfat": 0,
+        "badfat": 5,
+        "protein": 98,
+        "unit": "100g",
+        "note": "4 miếng gà ức to bằng 2 đốt ngón tay"
+    },
+    {
+        "name": "thịt bò",
+        "calo": 288,
+        "cabs": 0,
+        "fat": 176,
+        "goodfat": 0,
+        "badfat": 69,
+        "protein": 112,
+        "unit": "100g",
+        "note": ""
+    },
+    {
+        "name": "thịt lợn (nạc thăn)",
+        "calo": 109,
+        "cabs": 0,
+        "fat": 20,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 89,
+        "unit": "100g",
+        "note": ""
+    },
+    {
+        "name": "cá trắm",
+        "calo": 91,
+        "cabs": 0,
+        "fat": 23,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 68,
+        "unit": "100g",
+        "note": ""
+    },
+    {
+        "name": "cá hồi",
+        "calo": 216,
+        "cabs": 0,
+        "fat": 142,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 74,
+        "unit": "100g",
+        "note": "chất béo tốt và giàu khoáng chất"
+    },
+    {
+        "name": "phở",
+        "calo": 800,
+        "cabs": 200,
+        "fat": 300,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 300,
+        "unit": "1 bat",
+        "note": "chỉ nên ăn tái chín hoặc tái, tái nạm hoặc gầu rất béo"
+    },
+    {
+        "name": "sữa chua",
+        "calo": 100,
+        "cabs": 45,
+        "fat": 22,
+        "goodfat": 7,
+        "badfat": 15,
+        "protein": 33,
+        "unit": "1 cup",
+        "note": ""
+    },
+    {
+        "name": "bột yến mạch",
+        "calo": 402,
+        "cabs": 280,
+        "fat": 88,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 36,
+        "unit": "100g",
+        "note": ""
+    },
+    {
+        "name": "trái chuối",
+        "calo": 89,
+        "cabs": 82,
+        "fat": 3,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 4,
+        "unit": "100g",
+        "note": "1 quả cỡ vừa"
+    },
+    {
+        "name": "chân giò muối",
+        "calo": 483,
+        "cabs": 0,
+        "fat": 338,
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 145,
+        "unit": "100g",
+        "note": "rất béo và không tốt "
+    },
+    {
+        "name": "mỳ tôm",
+        "calo": 355,
+        "cabs": 210,
+        "fat": 117, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 28,
+        "unit": "1 goi",
+        "note": "1 goi khoang 78 gram, rất nhiều béo"
+    },
+    {
+        "name": "đậu phụ",
+        "calo": 76,
+        "cabs": 8,
+        "fat": 32, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 26,
+        "unit": "100g ",
+        "note": "(không rõ mấy bìa) cân bằng chrolesterol tốt cho sức khỏe tim"
+    },
+    {
+        "name": "đùi gà có da",
+        "calo": 187,
+        "cabs": 0,
+        "fat": 109, 
+        "goodfat": 0,
+        "badfat": 22,
+        "protein": 77,
+        "unit": "100g ",
+        "note": "không tốt bằng ức, béo hơn"
+    },
+    {
+        "name": "khoai lang",
+        "calo": 86,
+        "cabs": 81,
+        "fat": 1, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 4,
+        "unit": "100g ",
+        "note": "(không rõ 1 củ bao nhiêu), nhiều xơ, rất tốt"
+    },
+    {
+        "name": "bánh gạo",
+        "calo": 40,
+        "cabs": 30,
+        "fat": 10, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 0,
+        "unit": "1 cái ",
+        "note": "tính tương đối "
+    },
+    {
+        "name": "ngô",
+        "calo": 96,
+        "cabs": 70,
+        "fat": 12, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 14,
+        "unit": "100g ",
+        "note": "tốt cho tim, giảm chrolesterol"
+    },
+    {
+        "name": "đi bộ",
+        "calo": -300,
+        "cabs": 0,
+        "fat": 0, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 0,
+        "unit": "1h ",
+        "note": "tùy theo cân nặng và tốc độ đi, thông số chỉ mang tính tương đối"
+    },
+    {
+        "name": "bún cá",
+        "calo": 600,
+        "cabs": 200,
+        "fat": 200, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 200,
+        "unit": "1 bát",
+        "note": "chỉ tính tương đối"
+    },
+    {
+        "name": "sữa không đường",
+        "calo": 60,
+        "cabs": 20,
+        "fat": 20, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 20,
+        "unit": "100ml",
+        "note": "chỉ tính tương đối"
+    }
+];
+showTable($(".table.list"), g_foodEnergy);
+$(".table.list").hide();
 
 $(".show-list").on("click", ()=> {
     $(".table.list").toggle();

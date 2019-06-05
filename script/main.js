@@ -261,6 +261,17 @@ g_foodEnergy = [
         "protein": 20,
         "unit": "100ml",
         "note": "chỉ tính tương đối"
+    },
+    {
+        "name": "chè, trà sữa",
+        "calo": 300,
+        "cabs": 300,
+        "fat": 0, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 0,
+        "unit": "100ml",
+        "note": "toàn cab xấu"
     }
 ];
 showTable($(".table.list"), g_foodEnergy);

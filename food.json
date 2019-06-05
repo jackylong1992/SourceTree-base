@@ -229,5 +229,16 @@
         "protein": 0,
         "unit": "1h ",
         "note": "tùy theo cân nặng và tốc độ đi, thông số chỉ mang tính tương đối"
+    },
+    {
+        "name": "chè, trà sữa",
+        "calo": 300,
+        "cabs": 300,
+        "fat": 0, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 0,
+        "unit": "100ml",
+        "note": "toàn cab xấu"
     }
 ]

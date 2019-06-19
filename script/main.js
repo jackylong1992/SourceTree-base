@@ -272,6 +272,17 @@ g_foodEnergy = [
         "protein": 0,
         "unit": "100ml",
         "note": "toàn cab xấu"
+    },
+    {
+        "name": "bánh mỳ đen",
+        "calo": 260,
+        "cabs": 200,
+        "fat": 30, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 30,
+        "unit": "100g",
+        "note": "khoảng 4-5 lát"
     }
 ];
 showTable($(".table.list"), g_foodEnergy);

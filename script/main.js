@@ -283,6 +283,17 @@ g_foodEnergy = [
         "protein": 30,
         "unit": "100g",
         "note": "khoảng 4-5 lát"
+    },
+    {
+        "name": "thịt ba chỉ",
+        "calo": 260,
+        "cabs": 20,
+        "fat": 190, 
+        "goodfat": 0,
+        "badfat": 0,
+        "protein": 50,
+        "unit": "100g",
+        "note": "rất béo"
     }
 ];
 showTable($(".table.list"), g_foodEnergy);
